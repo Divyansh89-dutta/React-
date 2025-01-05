@@ -45,3 +45,115 @@ var state = [1,2,3,4,5];
 var copy = [...state];
 copy.pop()
 is the correct way
+
+now for object 
+var state = {a:1,b:2,c:3,d:4,e:5};
+var copy = {...state};
+copy.a = 10;
+is the correct way to copy object and update it.
+
+var obj = {name: "divyansh, age:23}
+const {age} = obj;
+and how to call it is by using 
+const {age} = obj;
+and just type age where you want to apply the variable
+
+var obj = {name: "string" , social:{
+    facebook: {
+        first: "haah",
+        second: "divyansh"
+    }
+}}
+const {second} = obj.social;
+now use the second now you good to goo 
+
+hum log component banaate hai , component matlab page ka hissa, navbar, sidebar, cart,landing,second, ab dikkat ye aati hai ki har hissa alag alag component hai aur component ko hum alag alag files mein rakhte hai,to inko last mein jodna bhi padta hai, jodne ke liye use hota hai import and export
+
+navbar - export 
+sidebar - export
+cart - export
+main - import navba, sidebar, cart 
+
+how to export :- 
+function navbar(){
+    return <div>navbar</div>;
+}
+export default navbar;
+export function navbar(){
+    return <div>navbar</div>;
+}
+
+how to import :- 
+import navbar from './navbar.js';
+function main(){
+    return <div>
+    <navbar/>
+    </div>;
+    }
+import {Cart, Abcd} from
+'./cart.js';
+
+arrow function :-
+arrow function is a function which is defined with arrow operator (=>) and it is used to define
+a function in a single line. It is also known as lambda function.
+type of arrow function :- 
+1. single line arrow function :-
+const abcd ()=>{
+    return "divyansh";
+}
+2. multi line arrow function :-
+const ac = () =>{
+    conslelog(val);
+}
+3. arrow function with parameters :-
+const ac = () => 12;
+consle.log("hey"+ac());
+4. arrow function with return type :-
+const abcd = () => ({name: 'abcd'});
+console.log(abcd().name); // Output: "abcd"
+
+Map filter :-
+
+map() :- it is used to create a new array from an existing array. It is used to
+perform some operation on each element of the array and return a new array.
+
+filter() :- it is used to create a new array with all elements that pass the test implemented by
+the provided function.
+
+map filter - dono hi array pe chalta hai, aur dono kaa kaam hai array par kuchh perform karna ek naya array return karna 
+
+const arr = [1, 2, 3, 4, 5];
+const doubleArr = arr.map((x) => x * 2);
+console.log(doubleArr); // Output: [2, 4, 6, 8,
+10]
+const evenArr = arr.filter((x) => x % 2 === 0);
+console.log(evenArr); // Output: [2, 4]
+
+var arr = [1,2,3,4,5];
+map - har element par kuchh karo and naye array mein rakho 
+foreach ke andar aaata hai function 
+step one:- 
+arr.map(var => {
+    return var*2;
+    console.log(var);
+})
+step two:-
+const ans = arr.map(val => val*12);
+map ke andar return krne ka wajah se hi elements naye array main place hote hai 
+for example :- 
+state ek array hai usmein numbers hai and aapko har number ko +1 karna hai 
+const state = [1,2,3,4,5];
+const ans = state.map(val => val+1);
+
+ek array hai saare number ko ki 5 se bade ho unko 5 job dena and baaki numbers waise ke waise return karo 
+const state = [1,2,3,4,5];
+const ans = state.map(val => val>5 ? 5 : val);
+
+map filter mein ek hai farak hai, map saare bande lautata hai matlab ki count kam nahi hoga , filter bando ko kam kar skta hai
+
+ek array mein sabhi nums jo ki 5 se bade hai unmein 10 add karo , jab og array ka size kam naa hona ho waha map use hota hai ,jab og ka size karna ho to waha filter use hota hai 
+const state = [1,2,3,4,5,6,7,8,
+9,10];
+const arr = arr.filter(elem = > ture);
+const ans = state.map(val => val>5 ? val+10 : val);
+const arr = arr.filter(elem = > elem>4);
