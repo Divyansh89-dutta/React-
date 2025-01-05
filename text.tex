@@ -1,0 +1,47 @@
+immutable vs mutable
+immutable :- 
+1. Immutable objects are objects that cannot be changed once they are created.
+2. Immutable objects are thread-safe.
+mutable :-
+1. Mutable objects are objects that can be changed once they are created.
+2. Mutable objects are not thread-safe.
+
+primitive and refernce 
+primitive :-
+1. Primitive types are the basic data types in a programming language.
+2. Primitive types are immutable.
+reference :-
+1. Reference types are the complex data types in a programming language.
+2. Reference types are mutable.
+
+array objects destructing import and export 
+array objects :-
+1. Array objects are mutable.
+2. Array objects are reference types.
+destructing :-
+1. Destructuring is a feature in JavaScript that allows you to unpack values from arrays, objects
+2. Destructuring is used to assign values to variables from an array or object.
+import and export :-
+1. Import and export are used to share code between modules.
+2. Import is used to bring variables, functions, and classes from other modules into the current module
+3. Export is used to make variables, functions, and classes available for import in other modules.
+
+map filter arrow fncs (implicit return) spread opration
+
+React js mein aapko ek state naam ki cheej milege us bande ko app mutable nahi krskte matlab ki directly uski value nahi hata yo jod sakte 
+
+var state = [1,2,3,4];
+% state.push(5); // state = [1,2,3,4,5]
+ state.pop(); // state = [1,2,3,4]
+ this is not allowed in react 
+ correct way is 
+ var state = [1,2,3,4];
+ state = [1,2] is the correct way
+
+aur ab jo padhai shuru hogi wo isi baare mein hogi ke state ko immutable way mein kasie update karein 
+
+how to copy 
+var state = [1,2,3,4,5];
+var copy = [...state];
+copy.pop()
+is the correct way
