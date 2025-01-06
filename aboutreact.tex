@@ -118,3 +118,25 @@ function MyComponent() {
     </React.Fragment>
   );
 }
+
+state :-
+1. Use the useState hook to add state to a functional component.
+2. Destructure the state variable and the setter function from the useState hook.
+3. Use the setter function to update the state.
+4. Use the state variable to render the component.
+
+example :-
+import React, { useState } from 'react';
+
+function MyComponent() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+
+state ek data hota hai,react is data ka khayaal rakhta hai, jab bhi state change hota hai to react component ko re-render karta hai, state ko update karne ke liye hum useState hook ka use karte hai 
