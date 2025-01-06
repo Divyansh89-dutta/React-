@@ -1,0 +1,104 @@
+react -> is a library for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications.
+
+DOM REDENDERING -> DOM stands for Document Object Model. It is a programming interface for HTML and XML documents. It represents the structure of the document as a tree of objects. React uses a virtual DOM to render the UI components. The virtual DOM is a lightweight copy of the actual DOM. When the state of a component changes, React updates the virtual DOM and compares it with the actual DOM. It then updates only the parts of the actual DOM that have changed. This process is called DOM rendering. It makes the UI rendering process faster and more efficient.
+
+Real Dom -> The real DOM is the actual HTML document that is rendered in the browser. It is a tree-like structure of HTML elements that represents the structure of the web page. The real DOM is updated whenever the state of a component changes in React.
+
+virtual DOM -> The virtual DOM is a lightweight copy of the actual DOM. It is a tree-like structure of React elements that represents the structure of the UI components. React uses the virtual DOM to render the UI components. When the state of a component changes, React updates the virtual DOM and compares it with the actual DOM. It then updates only the parts of the actual DOM that have changed. This process makes the UI rendering process faster and more efficient.
+
+jab website apr khoob aare chanage hote hai to khhob saara repaint hota hai wo bhi wo elements jo badle bhi nahi, aur ye website ke slow down kar deta hai, is cheej se bachane ke liye react ne virtual dom banaya
+
+vdom kya karta hai srf wo cheeje update karta hai jo badli hai baki sabko chhod deta hai, isse website ki speed badh jaati hai
+
+jsx -> look like a html but it is not a html, it is a javascript, jsx is a syntax extension for JavaScript. It allows you to write HTML-like code in your JavaScript files. JSX code is compiled into regular JavaScript code by a transpiler like Babel. JSX makes it easier to write and maintain UI components in React.
+
+how to creat the component in react :-
+1. Create a new file with a .jsx extension.
+2. Import the React library at the top of the file.
+3. Create a functional component using the function keyword.
+4. Write the JSX code for the component inside the function.
+5. Export the component using the export keyword.
+
+example :-
+import React from 'react';
+
+function MyComponent() {
+  return (
+    <div>
+      <h1>Hello, World!</h1>
+    </div>
+  );
+}
+
+export default MyComponent;
+
+how to use the component in another component :-
+1. Import the component from the file where it is defined.
+2. Use the component as a JSX element in the render method of another component.
+
+example :-
+import React from 'react';
+import MyComponent from './MyComponent';
+
+function App() {
+  return (
+    <div>
+      <MyComponent />
+    </div>
+    );
+}
+
+export default App;
+
+{} is used by the component
+{} is used by the component to define the props that it accepts. Props are short for "properties
+
+how to pass props to the component :-
+1. In the component where you want to pass props, define the props as function parameters.
+2. Pass the props to the component as attributes in the JSX element where the component is used.
+
+example :-
+import React from 'react';
+
+function MyComponent(props) {
+  return (
+    <div>
+      <h1>Hello, {props.name}!</h1>
+    </div>
+  );
+}
+
+how to use the map dunction in the compoment :-
+1. Use the map function to iterate over an array of items.
+2. Return a new array of JSX elements from the map function.
+3. Use the new array of JSX elements in the component.
+
+example :-
+import React from'react';
+
+function MyComponent(props) {
+  const items = props.items.map((item, index) => (
+    <li key={index}>{item}</li>
+  ));
+  return (
+    <div>
+      <ul>{items}</ul>
+    </div>
+  );
+}
+this how you use the map dunction in the component 
+
+
+function App() {
+  const data = ['divyansh', 'kumar', 'singh'];
+  
+  return (
+    <div>
+      {data.map((elem, index) => (
+        <div className="px-3 py-2 w-fit bg-zinc-200 rounded-md" key={index}>
+          {elem}
+        </div>
+      ))}
+    </div>
+  );
+}
