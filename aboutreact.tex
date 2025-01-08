@@ -140,3 +140,102 @@ function MyComponent() {
 }
 
 state ek data hota hai,react is data ka khayaal rakhta hai, jab bhi state change hota hai to react component ko re-render karta hai, state ko update karne ke liye hum useState hook ka use karte hai 
+
+useState state ko turant update nahi karta, wo useState ko update karte apne hissab se function completion ke baad to fix performance issue ke liye react ek queue banata hai jisme wo state update karta hai
+
+useRef :- 
+1. Use the useRef hook to create a reference to a DOM element or a value. 
+2. Use the ref attribute to attach the reference to a DOM element.
+3. Use the current property of the ref object to access the value of the reference.
+
+example :-
+import React, { useRef } from 'react';
+
+function MyComponent() {
+  const inputRef = useRef(null);
+
+  function handleClick() {
+    inputRef.current.focus();
+  }
+  
+  return (
+    <div>
+      <input type="text" ref={inputRef} />
+      <button onClick={handleClick}>Focus on input</button>
+    </div>
+  );
+  }
+  useRef() is used to create a reference to a DOM element or a value, and it allows you to access the value of the reference later. In this example, we create a reference to an input element and use it to focus on the input element when a button is clicked.
+
+  useRef = is tareeke main hum har input ko select kar leta hai and unki value tab nikaalte hai jab form submit hota hai 
+
+  controlled component :-
+  1. Use the useState hook to create state variables for form inputs. 
+  2. Use the value attribute to bind the form inputs to the state variables.
+  3. Use the onChange event to update the state variables when the form inputs change.
+  4. Render the form inputs with the bound state variables.
+  5. Use the handleSubmit event to handle the form submission.
+  6. Prevent the default form submission behavior by calling e.preventDefault() in the handleSubmit event handler.
+  7. Use the state variables to display the form inputs and handle form validation.
+  8. Use conditional rendering to display error messages or success messages based on the form validation and submission status.
+  9. Use the useEffect hook to perform any additional actions after the component mounts or updates.
+  example :-
+  import React, { useState } from 'react';
+  
+  function MyComponent() {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [submitted, setSubmitted] = useState(false);
+    const [error, setError] = useState('');
+    
+    function handleSubmit(e) {
+      e.preventDefault();
+      
+      // Perform form validation
+      if (!name || !email || !password) {
+        setError('Please fill in all fields.');
+        return;
+      }
+      
+      // Perform additional form validation (e.g., email format, password strength)
+      
+      // Reset error message and form submission status
+      setError('');
+      setSubmitted(true);
+    }
+    
+    return (
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>Name:</label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Email:</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Password:</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <button type="submit">Submit</button>
+        {submitted && error && <p>{error}</p>}
+        {submitted && <p>Form submitted successfully!</p>}
+      </form>
+    );
+  }
+  aap jabhi kuchh loikhe useState ke thorugh data real time par update kar deta hai 
+  jaise hai kuch type ho set state kardo nayi ke baraabar 
