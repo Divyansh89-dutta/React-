@@ -29,7 +29,9 @@ function Cards() {
               alt="User"
               className="w-20 h-20 rounded-2xl mb-4 mx-auto"
             />
-            <h2 className="text-lg font-bold">{user.name.first} {user.name.last}</h2>
+            <h2 className="text-lg font-bold">
+              {user.name.first} {user.name.last}
+            </h2>
             <h5 className="text-sm text-gray-400">{user.gender}</h5>
             <h6 className="text-sm text-gray-300">{user.email}</h6>
             <p className="text-xs text-gray-400 mt-2">
